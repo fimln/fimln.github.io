@@ -1,1 +1,1 @@
-Under construction.
+Github Pages, dah itu aja
