@@ -3,7 +3,7 @@
 My name is **Alfi Maulana Akbar**.
 
 - 🔭 I’m currently studying at Universitas Ahmad Dahlan Yogyakarta
-- 🌱 I’m currently learning Android Development using [Java](https://www.java.com/), [Kotlin](https://kotlinlang.org/) and [Dart](https://dart.dev/)
+- 🌱 I’m currently learning Android Development using [Kotlin](https://kotlinlang.org/) and [Dart](https://dart.dev/)
 - 📫 How to reach me : [Instagram](https://www.instagram.com/alfimlnbr/) and [LinkedIn](https://www.linkedin.com/in/fimln/)
 
 <p align="left">
