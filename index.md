@@ -4,7 +4,7 @@ My name is **Alfi Maulana Akbar**.
 
 - 🔭 I’m currently studying at Universitas Ahmad Dahlan Yogyakarta
 - 🌱 I’m currently learning GNU/Linux system and Android Development using [Java](https://www.java.com/) and [Dart](https://dart.dev/)
-- 🐧 I’m currently using dualboot system with Windows and [Manjaro Linux](https://manjaro.org/)
+- 🐧 I’m currently using dual-boot system with Windows and [Manjaro Linux](https://manjaro.org/)
 - 📫 How to reach me : [Instagram](https://www.instagram.com/alfimlnbr/) and [LinkedIn](https://www.linkedin.com/in/fimln/)
 
 <p align="left">
