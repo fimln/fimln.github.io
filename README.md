@@ -1,1 +1,1 @@
-Github Pages, dah itu aja
+My own Github Pages.
