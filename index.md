@@ -3,7 +3,7 @@
 My name is **Alfi Maulana Akbar**.
 
 - 🔭 I’m currently studying at Universitas Ahmad Dahlan Yogyakarta
-- 🌱 I’m currently learning GNU/Linux system, Machine Learning and Android Development using [Java](https://www.java.com/) and [Dart](https://dart.dev/)
+- 🌱 I’m currently learning GNU/Linux system, [Machine Learning](https://www.dicoding.com/learningpaths/30) and Android Development using [Java](https://www.java.com/) and [Dart](https://dart.dev/)
 - 📫 How to reach me : [Medium](https://medium.com/@fimln), [Instagram](https://www.instagram.com/alfimlnbr/) and [LinkedIn](https://www.linkedin.com/in/fimln/)
 
 
