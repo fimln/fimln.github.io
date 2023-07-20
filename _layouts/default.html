@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% seo %}
+
+    {%if site.color-scheme %}
+    <link rel="stylesheet" href="{{ "/assets/css/colors-ColorScheme.css?v=" | replace: "ColorScheme", site.color-scheme | append: site.github.build_revision | relative_url }}">
+    {% else %}
+    <link rel="stylesheet" href="{{ "/assets/css/colors-auto.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% endif %}
+
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -33,9 +40,9 @@
 
         {% if site.show_downloads %}
         <ul class="downloads">
-          <li><a href="https://fimln.tech/blog">Open Blog Page<strong>fimln Blog</strong></a></li>
+          <li><a href="https://fimln.tech/blog">Open Blog Page <strong>fimln Blog</strong></a></li>
           <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-          <li><a href="https://www.linkedin.com/in/fimln/">Lets Connect!<strong>LinkedIn</strong></a></li>
+          <li><a href="https://www.linkedin.com/in/fimln/">Lets Connect! <strong>LinkedIn</strong></a></li>
         </ul>
         {% endif %}
       </header>
