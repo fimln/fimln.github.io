@@ -3,7 +3,7 @@
 My name is **Alfi Maulana Akbar**.
 
 - 🔭 I’m currently studying at Universitas Ahmad Dahlan Yogyakarta
-- 🌱 I’m currently learning about Cloud Computing and GNU/Linux
+- 🌱 Specializing in Cloud Computing, Machine Learning Deployment, and GNU/Linux Systems
 - 📫 How to reach me : [Blog Page](https://fimln.github.io/blog), [Instagram](https://www.instagram.com/alfimlnbr/) and [LinkedIn](https://www.linkedin.com/in/fimln/)
 
 
