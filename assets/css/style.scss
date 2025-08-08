@@ -32,6 +32,15 @@ html { box-sizing: border-box; }
   /* Borders and separators */
   --border-color: rgba(203, 213, 225, 0.25);
   
+  /* Legacy GitHub theme compatibility variables */
+  --color-fg-default: var(--text-color);
+  --color-fg-muted: var(--muted-text-color);
+  --color-canvas-default: var(--background-color);
+  --color-canvas-subtle: var(--surface-1);
+  --color-border-default: var(--border-color);
+  --color-accent-fg: var(--brand-color);
+  --color-accent-emphasis: var(--brand-color);
+  
   /* Code blocks */
   --code-background-color: #0f172a;
   --code-text-color: #e2e8f0;
@@ -125,21 +134,51 @@ header img:hover {
 
 /* Navigation/Downloads styling - Remove conflicting styles, use orderedlist theme structure */
 
-/* Main content section */
+/* Main content section - Modern design */
 section {
-  background-color: var(--surface-1) !important;
-  border-radius: 8px;
-  padding: 0 1.5rem !important;
-  border: 1px solid var(--border-color);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.02) inset !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+
+/* Subtle inner glow effect */
+section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  pointer-events: none;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color) !important;
   font-weight: 600;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
+}
+
+/* Remove excessive margins for first/last elements in section */
+section > *:first-child {
+  margin-top: 0 !important;
+}
+
+section > *:last-child {
+  margin-bottom: 0 !important;
 }
 
 h1 { font-size: 2rem; }
@@ -155,6 +194,16 @@ p {
   line-height: 1.7;
 }
 
+/* Ensure content fits properly within modern section padding */
+section {
+  box-sizing: border-box !important;
+}
+
+section > * {
+  position: relative;
+  z-index: 2;
+}
+
 /* Links */
 a {
   color: var(--link-color) !important;
@@ -167,6 +216,24 @@ a {
 a:hover {
   color: var(--link-color-hover) !important;
   text-decoration-color: rgba(59, 130, 246, 0.9);
+}
+
+/* Remove underlines from tech icons */
+a:has(img) {
+  text-decoration: none !important;
+}
+
+p a:has(img) {
+  text-decoration: none !important;
+}
+
+section a[href*="skillicons.dev"] {
+  text-decoration: none !important;
+}
+
+/* Fallback for browsers that don't support :has() */
+section p a {
+  text-decoration: none !important;
 }
 
 /* Lists */
@@ -341,10 +408,10 @@ body::before {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 1px, transparent 1px);
   background-size: 24px 24px;
-  mask-image: radial-gradient(ellipse at 50% -20%, rgba(255, 255, 255, 0.6), transparent 70%);
+  mask-image: radial-gradient(ellipse at 50% -20%, rgba(255, 255, 255, 0.8), transparent 70%);
   z-index: 0;
 }
 
@@ -357,9 +424,8 @@ body::before {
 /* OrderedList Minimal layout structure (ported from minimal-master/stylesheets/styles.css) */
 /* These structural rules ensure object positions match the original theme while preserving our Zed styling. */
 
-/* Layout variables */
+/* Layout variables (consolidated with global :root) */
 :root {
-  --wrapper-max: 860px;        /* matches minimal wrapper width */
   --sidebar-width: 270px;      /* header/footer column */
   --content-width: 500px;      /* main section column */
 }
@@ -422,6 +488,7 @@ header ul a {
   text-align: center;
   padding-top: 6px;
   height: 34px;
+  text-decoration: none !important;
 }
 
 header ul a:hover {
@@ -447,7 +514,6 @@ header ul a strong {
 section {
   width: var(--content-width);
   float: right;
-  padding-bottom: 50px;
 }
 
 /* Footer fixed to the left column near bottom */
@@ -478,12 +544,13 @@ footer {
   }
 
   section {
-    border: 1px solid var(--border-color) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-width: 1px 0 !important;
-    padding: 20px 0 !important;
+    padding: 1.5rem 0 !important;
     margin: 0 0 20px !important;
-    background-color: var(--surface-1) !important;
-    border-radius: 0 !important;
+    background: linear-gradient(135deg, var(--surface-1) 0%, var(--surface-2) 100%) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
   }
 
   header a small {
@@ -494,6 +561,41 @@ footer {
     position: absolute;
     right: 50px;
     top: 52px;
+  }
+}
+
+@media print, screen and (max-width: 768px) and (min-width: 481px) {
+  body {
+    padding: 20px;
+  }
+
+  header {
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  header img {
+    max-width: 180px !important;
+    width: 180px !important;
+    height: 180px !important;
+    display: block !important;
+    margin: 0 auto 1rem auto !important;
+  }
+
+  section {
+    padding: 1.5rem !important;
+    margin: 1rem 0 !important;
+    border-radius: 12px !important;
+  }
+
+  header ul {
+    width: 100% !important;
+    position: static !important;
+  }
+
+  header li, header ul li + li + li {
+    width: 33.33% !important;
   }
 }
 
@@ -516,7 +618,7 @@ footer {
   }
 
   section {
-    padding: 0.5rem !important;
+    padding: 1.5rem 0.5rem 0.5rem 1rem !important;
     margin: 5px 0 !important;
   }
 
@@ -542,8 +644,16 @@ footer {
     font-size: 9px !important;
   }
 
+  header img {
+    max-width: 140px !important;
+    width: 140px !important;
+    height: 140px !important;
+    display: block !important;
+    margin: 0 auto 1rem auto !important;
+  }
+
   section {
-    padding: 0 0.5rem !important;
+    padding: 1.5rem 0.5rem 0.5rem 1rem !important;
     margin: 5px 3px !important;
   }
 
@@ -556,11 +666,3 @@ footer {
   }
 }
 
-/* Ensure our Zed background grid remains behind the fixed elements */
-body::before {
-  z-index: 0;
-}
-.wrapper, section {
-  position: relative;
-  z-index: 1;
-}
