@@ -589,6 +589,16 @@ footer {
     border-radius: 16px !important;
   }
 
+  /* Smaller font sizes for mobile content */
+  section h1 { font-size: 1.6rem !important; }
+  section h2 { font-size: 1.4rem !important; }
+  section h3 { font-size: 1.2rem !important; }
+  section h4 { font-size: 1.1rem !important; }
+  section h5 { font-size: 1rem !important; }
+  section h6 { font-size: 0.9rem !important; }
+  section p { font-size: 0.85rem !important; }
+  section li { font-size: 0.85rem !important; }
+
   header ul {
     width: 100% !important;
     position: static !important;
@@ -621,6 +631,16 @@ footer {
     padding: 1.5rem 0.5rem 0.5rem 1rem !important;
     margin: 5px 0 !important;
   }
+
+  /* Even smaller font sizes for smaller mobile screens */
+  section h1 { font-size: 1.4rem !important; }
+  section h2 { font-size: 1.2rem !important; }
+  section h3 { font-size: 1.1rem !important; }
+  section h4 { font-size: 1rem !important; }
+  section h5 { font-size: 0.95rem !important; }
+  section h6 { font-size: 0.85rem !important; }
+  section p { font-size: 0.8rem !important; }
+  section li { font-size: 0.8rem !important; }
 
   pre, code {
     word-wrap: normal;
@@ -656,6 +676,16 @@ footer {
     padding: 1.5rem 0.5rem 0.5rem 1rem !important;
     margin: 5px 3px !important;
   }
+
+  /* Smallest font sizes for very small mobile screens */
+  section h1 { font-size: 1.3rem !important; }
+  section h2 { font-size: 1.1rem !important; }
+  section h3 { font-size: 1rem !important; }
+  section h4 { font-size: 0.95rem !important; }
+  section h5 { font-size: 0.9rem !important; }
+  section h6 { font-size: 0.8rem !important; }
+  section p { font-size: 0.75rem !important; }
+  section li { font-size: 0.75rem !important; }
 
   /* GitHub stats images responsive sizing */
   img[src*="github-readme-stats"] {
