@@ -603,11 +603,12 @@ footer {
   section {
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-width: 1px 0 !important;
-    padding: 1.5rem 0 !important;
-    margin: 0 0 20px !important;
+    padding: 1.5rem !important;
+    margin: 0 10px 20px 10px !important;
     background: linear-gradient(135deg, var(--surface-1) 0%, var(--surface-2) 100%) !important;
     border-radius: 16px !important;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+    width: calc(100% - 20px) !important;
   }
 
   header a small {
@@ -642,8 +643,9 @@ footer {
 
   section {
     padding: 1.5rem !important;
-    margin: 1rem 0 !important;
+    margin: 1rem 10px !important;
     border-radius: 16px !important;
+    width: calc(100% - 20px) !important;
   }
 
   /* Smaller font sizes for mobile content */
@@ -693,8 +695,9 @@ footer {
   }
 
   section {
-    padding: 1.5rem 0.5rem 0.5rem 1rem !important;
-    margin: 5px 0 !important;
+    padding: 1.5rem 1rem !important;
+    margin: 10px 5px !important;
+    width: calc(100% - 10px) !important;
   }
 
   /* Even smaller font sizes for smaller mobile screens */
@@ -746,8 +749,9 @@ footer {
   }
 
   section {
-    padding: 1.5rem 0.5rem 0.5rem 1rem !important;
-    margin: 5px 3px !important;
+    padding: 1.5rem 1rem !important;
+    margin: 10px 5px !important;
+    width: calc(100% - 10px) !important;
   }
 
   /* Smallest font sizes for very small mobile screens */
