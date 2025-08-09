@@ -449,65 +449,122 @@ header {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-/* Header nav list (downloads) layout and widths - EXACT minimal-master structure with Zed colors */
-header ul {
+/* Modern button styling - coherent with dark theme, 3-column layout */
+header ul.downloads {
   list-style: none;
-  height: 40px;
+  height: 45px;
   padding: 0;
-  background: var(--surface-1);
-  border-radius: 5px;
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   width: var(--sidebar-width);
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-header li {
+header ul.downloads li {
   width: 89px;
   float: left;
-  border-right: 1px solid var(--border-color);
-  height: 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  height: 45px;
+  margin: 0;
+  flex: 1;
 }
 
-header li:first-child a {
-  border-radius: 5px 0 0 5px;
+header ul.downloads li:last-child {
+  border-right: none;
 }
 
-header li:last-child a {
-  border-radius: 0 5px 5px 0;
+header ul.downloads li:first-child a {
+  border-radius: 7px 0 0 7px;
 }
 
-header ul li + li + li {
+header ul.downloads li:last-child a {
+  border-radius: 0 7px 7px 0;
+}
+
+header ul.downloads li + li + li {
   border-right: none;
   width: 89px;
 }
 
-header ul a {
+header ul.downloads a {
   line-height: 1;
   font-size: 11px;
   color: var(--muted-text-color);
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding-top: 6px;
-  height: 34px;
+  padding: 8px 5px;
+  height: 45px;
   text-decoration: none !important;
+  position: relative;
+  transition: all 0.2s ease;
+  background: transparent;
 }
 
-header ul a:hover {
+/* Subtle gradient overlay on hover */
+header ul.downloads a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(59, 130, 246, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+header ul.downloads a:hover {
   color: var(--text-color);
-  background: var(--surface-2);
+  background: rgba(59, 130, 246, 0.08);
 }
 
-header ul a:active {
-  background-color: var(--surface-2);
+header ul.downloads a:hover::before {
+  opacity: 1;
 }
 
-header ul a strong {
-  font-size: 14px;
+header ul.downloads a:active {
+  background: rgba(59, 130, 246, 0.12);
+  transform: scale(0.98);
+}
+
+header ul.downloads a strong {
+  font-size: 13px;
   display: block;
   color: var(--text-color);
   font-weight: 600;
-  line-height: 1;
-  margin: 0;
+  line-height: 1.2;
+  margin-top: 3px;
   padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add subtle accent indicator */
+header ul.downloads a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background: var(--brand-color);
+  transition: transform 0.2s ease;
+  border-radius: 2px;
+}
+
+header ul.downloads a:hover::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
 /* Main content floats right with fixed width */
@@ -557,7 +614,7 @@ footer {
     display: inline;
   }
 
-  header ul {
+  header ul.downloads {
     position: absolute;
     right: 50px;
     top: 52px;
@@ -599,13 +656,16 @@ footer {
   section p { font-size: 0.85rem !important; }
   section li { font-size: 0.85rem !important; }
 
-  header ul {
+  header ul.downloads {
     width: 100% !important;
     position: static !important;
+    flex-direction: row !important;
+    gap: 0 !important;
   }
 
-  header li, header ul li + li + li {
+  header ul.downloads li, header ul.downloads li + li + li {
     width: 33.33% !important;
+    flex: 1 !important;
   }
 }
 
@@ -619,12 +679,17 @@ footer {
     padding: 0;
   }
 
-  header ul, header p.view {
+  header ul.downloads, header p.view {
     position: static;
   }
 
-  header ul a {
+  header ul.downloads a {
     font-size: 10px !important;
+    padding: 8px 2px;
+  }
+  
+  header ul.downloads a strong {
+    font-size: 11px;
   }
 
   section {
@@ -652,16 +717,24 @@ footer {
     padding: 5px;
   }
 
-  header ul {
+  header ul.downloads {
     width: 99%;
+    flex-direction: row !important;
+    gap: 0 !important;
   }
 
-  header li, header ul li + li + li {
-    width: 33%;
+  header ul.downloads li, header ul.downloads li + li + li {
+    width: 33.33% !important;
+    flex: 1 !important;
   }
 
-  header ul a {
+  header ul.downloads a {
     font-size: 9px !important;
+    padding: 8px 2px;
+  }
+  
+  header ul.downloads a strong {
+    font-size: 10px;
   }
 
   header img {
