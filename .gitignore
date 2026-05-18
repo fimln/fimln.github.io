@@ -1,8 +1,42 @@
+# Jekyll build output
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+# Ruby/Bundler
 vendor/
 .bundle/
 Gemfile.lock
-minimal-master/
+
+# Claude Code
+.claude/
+CLAUDE.md
+improvements.md
+
+# Node (if ever added)
+node_modules/
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor swap/backup files
+*.swp
+*.swo
+*~
+*.bak
+*.orig
