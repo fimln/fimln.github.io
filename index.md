@@ -2,9 +2,9 @@
 
 My name is **Alfi Maulana Akbar**.
 
-- 🔭 Recent Computer Science graduate from Universitas Ahmad Dahlan Yogyakarta
-- ☁️ Specializing in Computer Vision, Cloud-based Machine Learning Deployment, and GNU/Linux System Administration
-- 📫 How to reach me : [Blog Page](https://fimln.github.io/blog), [Instagram](https://www.instagram.com/alfimlnbr/) and [LinkedIn](https://www.linkedin.com/in/fimln/)
+- 🔭 Currently pursuing a Master’s degree in Computer Science at Universitas Gadjah Mada, Yogyakarta.
+- ☁️ My areas of interest include computer vision, local LLMs, cloud-based machine learning deployment, and GNU/Linux system administration.
+- 📫 How to reach me : [Blog Page](https://alfi.ai.id/blog/), [Instagram](https://www.instagram.com/alfimlnbr/) and [LinkedIn](https://www.linkedin.com/in/fimln/)
 
 
 ### Languages and Tools
