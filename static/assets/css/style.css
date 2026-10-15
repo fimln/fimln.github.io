@@ -693,6 +693,9 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+  /* Let scaled SVG cards keep their own rounded border without clipping it. */
+  .github-cards img { border-radius: 0; }
+
   body {
     padding: 16px;
     overflow-wrap: anywhere;
