@@ -1,0 +1,11 @@
+baseURL = "https://alfi.ai.id/"
+title = "Lifetime learner."
+defaultContentLanguage = "en"
+locale = "en-US"
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[params]
+description = "Fig.1 - An ordinary person with AI-generated cartoon-esque selfie."
+
+[markup.goldmark.renderer]
+unsafe = true

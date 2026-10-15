@@ -14,7 +14,7 @@ Gemfile.lock
 CLAUDE.md
 improvements.md
 
-# Node (if ever added)
+# Node
 node_modules/
 
 # Environment
@@ -40,3 +40,14 @@ Desktop.ini
 *~
 *.bak
 *.orig
+
+# Local agent instructions
+/AGENTS.md
+
+# Hugo and local tooling
+public/
+resources/_gen/
+.hugo_build.lock
+.tools/
+.cache/
+.qa/
