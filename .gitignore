@@ -43,6 +43,7 @@ Desktop.ini
 
 # Local agent instructions
 /AGENTS.md
+/migrate.md
 
 # Hugo and local tooling
 public/
