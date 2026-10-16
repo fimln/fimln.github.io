@@ -48,5 +48,14 @@
         <p><small>Hosted on GitHub Pages, Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
+    <script>
+      if (window.matchMedia('(pointer: fine)').matches) {
+        const root = document.documentElement;
+        window.addEventListener('pointermove', (e) => {
+          root.style.setProperty('--mouse-x', e.clientX + 'px');
+          root.style.setProperty('--mouse-y', e.clientY + 'px');
+        }, { passive: true });
+      }
+    </script>
   </body>
 </html>

@@ -251,6 +251,11 @@ ul, ol {
   margin-bottom: 1rem;
 }
 
+section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 li {
   color: var(--text-color) !important;
   margin-bottom: 0.5rem;
@@ -322,19 +327,23 @@ tr:hover {
 
 /* Footer */
 footer {
-  background-color: var(--footer-background-color) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
   color: var(--footer-text-color) !important;
-  padding: 1.5rem !important;
+  padding: 0.75rem !important;
   border-radius: 8px;
   margin-top: 2rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.02) inset;
   text-align: center;
 }
 
 footer p {
   color: var(--footer-text-color) !important;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 footer a {
@@ -360,13 +369,22 @@ img {
 
 .github-cards a {
   display: block;
+  min-width: 0;
   border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.github-cards a:hover {
+  border-color: rgba(59, 130, 246, 0.45);
 }
 
 .github-cards img {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 0;
 }
 
 /* Remove conflicting responsive rules - handled by orderedlist structure below */
@@ -413,18 +431,29 @@ a:focus, button:focus {
 
 /* Zed grid background overlay — rasterised as a data-URI so the browser
    paints it once as a bitmap layer instead of recomputing gradients each frame */
-body::before {
+body::before,
+body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
+  background-size: 24px 24px;
+  z-index: 0;
+}
+
+body::before {
   /* A subtle 24 px blueprint grid. */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M24 0H0v1h23v23h1z' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
-  background-size: 24px 24px;
   opacity: 0.65;
   -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 70%);
   mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 70%);
-  z-index: 0;
+}
+
+body::after {
+  /* Higher-contrast blueprint grid revealed around the cursor. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M24 0H0v1h23v23h1z' fill='rgba(96,165,250,0.22)'/%3E%3C/svg%3E");
+  -webkit-mask-image: radial-gradient(260px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
+  mask-image: radial-gradient(260px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
 }
 
 /* Lift the main containers above the overlay */
@@ -471,6 +500,8 @@ header ul.downloads {
   height: 48px;
   padding: 0;
   background: rgba(255, 255, 255, 0.02);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   width: 100%;
@@ -604,6 +635,8 @@ footer {
     gap: 8px;
     padding: 0;
     background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
     border: 0;
     overflow: visible;
     box-shadow: none;
@@ -615,6 +648,8 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.02);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     overflow: hidden;
   }
 
@@ -688,11 +723,24 @@ footer {
   }
 
   footer {
-    margin-top: 1.5rem;
+    max-width: 300px;
+    margin: 1.5rem auto 0;
+  }
+
+  .github-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .github-cards img {
+    border-radius: 0;
   }
 }
 
 @media screen and (max-width: 600px) {
+  .github-cards {
+    grid-template-columns: 1fr;
+  }
+
   /* Let scaled SVG cards keep their own rounded border without clipping it. */
   .github-cards img { border-radius: 0; }
 
