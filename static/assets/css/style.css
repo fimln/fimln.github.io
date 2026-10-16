@@ -1,3 +1,4 @@
+/* Fonts: Inter, served locally. */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -15,434 +16,46 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Original profile styling preserved during the Hugo migration. */
-/* Minimal structural constraints mirroring orderedlist/minimal defaults */
-html { box-sizing: border-box; }
+/* Reset and design tokens */
+html { box-sizing: border-box; color-scheme: dark; }
 *, *::before, *::after { box-sizing: inherit; }
-:root { --wrapper-max: 860px; }
-.wrapper { max-width: var(--wrapper-max); margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
 
-/* Zed-inspired design override for orderedlist theme */
-
-/* Inter is served locally. */
-
-/* Zed Color Variables */
 :root {
-  /* Brand and accents */
-  --brand-color: #3b82f6;
-  --primary-color: var(--brand-color);
-
-  /* Base colors */
-  --background-color: #0b1220;
-  --body-background-color: var(--background-color);
-  --text-color: #dbe7ff;
-  --muted-text-color: #a6b3cf;
-
-  /* Links */
-  --link-color: var(--brand-color);
-  --link-color-hover: #60a5fa;
-
-  /* Borders and separators */
-  --border-color: rgba(203, 213, 225, 0.25);
-
-  /* Legacy GitHub theme compatibility variables */
-  --color-fg-default: var(--text-color);
-  --color-fg-muted: var(--muted-text-color);
-  --color-canvas-default: var(--background-color);
-  --color-canvas-subtle: var(--surface-1);
-  --color-border-default: var(--border-color);
-  --color-accent-fg: var(--brand-color);
-  --color-accent-emphasis: var(--brand-color);
-
-  /* Code blocks */
-  --code-background-color: #0f172a;
-  --code-text-color: #e2e8f0;
-
-  /* Buttons */
-  --btn-primary-color: var(--brand-color);
-
-  /* Masthead / header */
-  --masthead-background-color: rgba(10, 18, 32, 0.72);
-  --masthead-link-color: var(--text-color);
-  --masthead-link-color-hover: var(--link-color-hover);
-
-  /* Footer */
-  --footer-background-color: #070c14;
-  --footer-text-color: #9aa9c7;
-
-  /* Typography */
-  --global-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-  --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
-  /* Component surfaces (cards, panels) */
-  --surface-1: rgba(255,255,255,0.02);
-  --surface-2: rgba(255,255,255,0.04);
-
-  /* Tables */
-  --table-background-color: transparent;
-  --table-border-color: var(--border-color);
-
-  /* Forms */
-  --input-background-color: #0f172a;
-  --input-border-color: rgba(148,163,184,0.2);
-  --input-text-color: var(--text-color);
+  --bg: #0b1220;
+  --surface: rgba(0, 0, 0, 0.3);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #dbe7ff;
+  --muted: #a6b3cf;
+  --footer-text: #9aa9c7;
+  --brand: #3b82f6;
+  --brand-hover: #60a5fa;
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  --sidebar-width: 270px;
+  --content-width: 500px;
+  --layout-max: 860px;
 }
 
-/* Global Overrides */
 body {
-  background-color: var(--background-color) !important;
-  color: var(--text-color) !important;
-  font-family: var(--global-font-family) !important;
+  margin: 0;
+  padding: 20px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
   line-height: 1.6;
 }
 
-/* Wrapper styling */
-.wrapper {
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
-
-/* Header styling (minimal-aligned) */
-header {
-  /* Structural layout is defined below. */
-  background-color: transparent !important;
-  backdrop-filter: none;
-  border-radius: 0;
-  padding: 0 !important;
-  margin: 0;
-  border: 0;
-}
-
-header h1 {
-  color: var(--text-color) !important;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-header h1 a {
-  color: var(--text-color) !important;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-header h1 a:hover {
-  color: var(--link-color-hover) !important;
-}
-
-header p {
-  color: var(--muted-text-color) !important;
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-}
-
-header img {
-  border-radius: 50%;
-  border: 2px solid var(--border-color);
-  transition: border-color 0.2s ease;
-}
-
-header img:hover {
-  border-color: var(--brand-color);
-}
-
-/* Navigation/Downloads styling - Remove conflicting styles, use orderedlist theme structure */
-
-/* Main content section - Modern design */
-section {
-  background: rgba(0, 0, 0, 0.3) !important;
-  border-radius: 16px !important;
-  padding: 2rem !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.2),
-    0 1px 0 rgba(255, 255, 255, 0.05) inset,
-    0 -1px 0 rgba(255, 255, 255, 0.02) inset !important;
-  position: relative !important;
-  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  will-change: auto;
-}
-
-
-/* Subtle inner glow — solid border avoids mask-composite cost */
-section::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  pointer-events: none;
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--text-color) !important;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Remove excessive margins for first/last elements in section */
-section > *:first-child {
-  margin-top: 0 !important;
-}
-
-section > *:last-child {
-  margin-bottom: 0 !important;
-}
-
-h1 { font-size: 2rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.125rem; }
-h6 { font-size: 1rem; }
-
-p {
-  color: var(--text-color) !important;
-  margin-bottom: 1rem;
-  line-height: 1.7;
-}
-
-/* Ensure content fits properly within modern section padding */
-section {
-  box-sizing: border-box !important;
-}
-
-section > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* Links */
-a {
-  color: var(--link-color) !important;
-  text-decoration-color: rgba(59, 130, 246, 0.5);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
-}
-
-a:hover {
-  color: var(--link-color-hover) !important;
-  text-decoration-color: rgba(59, 130, 246, 0.9);
-}
-
-/* Remove underlines from tech icons */
-a:has(img) {
-  text-decoration: none !important;
-}
-
-p a:has(img) {
-  text-decoration: none !important;
-}
-
-section a[href*="skillicons.dev"] {
-  text-decoration: none !important;
-}
-
-/* Fallback for browsers that don't support :has() */
-section p a {
-  text-decoration: none !important;
-}
-
-/* Lists */
-ul, ol {
-  color: var(--text-color) !important;
-  margin-bottom: 1rem;
-}
-
-section ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-li {
-  color: var(--text-color) !important;
-  margin-bottom: 0.5rem;
-}
-
-/* Code styling */
-code {
-  background-color: var(--code-background-color) !important;
-  color: var(--code-text-color) !important;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-family: var(--monospace);
-  font-size: 0.9em;
-  border: 1px solid var(--border-color);
-}
-
-pre {
-  background-color: var(--code-background-color) !important;
-  color: var(--code-text-color) !important;
-  padding: 1rem;
-  border-radius: 6px;
-  overflow-x: auto;
-  border: 1px solid var(--border-color);
-  margin-bottom: 1rem;
-}
-
-pre code {
-  background-color: transparent !important;
-  padding: 0;
-  border: none;
-}
-
-/* Blockquotes */
-blockquote {
-  background-color: var(--surface-2) !important;
-  border-left: 4px solid var(--brand-color);
-  color: var(--text-color) !important;
-  padding: 1rem 1.5rem;
-  margin: 1rem 0;
-  border-radius: 0 6px 6px 0;
-}
-
-/* Tables */
-table {
-  background-color: var(--table-background-color) !important;
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid var(--table-border-color);
-}
-
-th, td {
-  color: var(--text-color) !important;
-  padding: 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid var(--table-border-color);
-}
-
-th {
-  background-color: var(--surface-2) !important;
-  font-weight: 600;
-}
-
-tr:hover {
-  background-color: var(--surface-2) !important;
-}
-
-/* Footer */
-footer {
-  background: rgba(0, 0, 0, 0.3) !important;
-  color: var(--footer-text-color) !important;
-  padding: 0.75rem !important;
-  border-radius: 8px;
-  margin-top: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.2),
-    0 1px 0 rgba(255, 255, 255, 0.05) inset,
-    0 -1px 0 rgba(255, 255, 255, 0.02) inset;
-  text-align: center;
-}
-
-footer p {
-  color: var(--footer-text-color) !important;
-  margin: 0;
-  font-size: 0.8rem;
-}
-
-footer a {
-  color: var(--brand-color) !important;
-}
-
-footer a:hover {
-  color: var(--link-color-hover) !important;
-}
-
-/* Image styling */
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-/* Keep repository and stats cards readable in the narrow content panel. */
-.github-cards {
-  display: grid;
-  gap: 12px;
-}
-
-.github-cards a {
-  display: block;
-  min-width: 0;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  overflow: hidden;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.github-cards a:hover {
-  border-color: rgba(59, 130, 246, 0.45);
-}
-
-.github-cards img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 0;
-}
-
-/* Remove conflicting responsive rules - handled by orderedlist structure below */
-
-html {
-  /* scroll-behavior: smooth removed — conflicts with iOS native momentum scroll */
-  color-scheme: dark;
-}
-
-/* Selection styling */
-::selection {
-  background-color: rgba(59, 130, 246, 0.3);
-  color: var(--text-color);
-}
-
-::-moz-selection {
-  background-color: rgba(59, 130, 246, 0.3);
-  color: var(--text-color);
-}
-
-/* Focus styles for accessibility */
-a:focus, button:focus {
-  outline: 2px solid var(--brand-color);
-  outline-offset: 2px;
-}
-
-/* Custom scrollbar for webkit browsers */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background-color);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-color);
-}
-
-/* Zed grid background overlay — rasterised as a data-URI so the browser
-   paints it once as a bitmap layer instead of recomputing gradients each frame */
+/* Blueprint grid: ambient layer plus a brighter layer revealed around the cursor. */
 body::before,
 body::after {
   content: "";
   position: fixed;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
   background-size: 24px 24px;
-  z-index: 0;
 }
 
 body::before {
-  /* A subtle 24 px blueprint grid. */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M24 0H0v1h23v23h1z' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
   opacity: 0.65;
   -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 70%);
@@ -450,367 +63,280 @@ body::before {
 }
 
 body::after {
-  /* Higher-contrast blueprint grid revealed around the cursor. */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M24 0H0v1h23v23h1z' fill='rgba(96,165,250,0.22)'/%3E%3C/svg%3E");
   -webkit-mask-image: radial-gradient(260px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
   mask-image: radial-gradient(260px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
 }
 
-/* Lift the main containers above the overlay */
-.wrapper, section {
+/* Base elements */
+h1, h3 { margin: 1.5rem 0 1rem; font-weight: 600; color: var(--text); }
+h1 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+p { margin-bottom: 1rem; line-height: 1.7; }
+ul { margin-bottom: 1rem; }
+li { margin-bottom: 0.5rem; }
+img { max-width: 100%; height: auto; border-radius: 6px; }
+
+a {
+  color: var(--brand);
+  text-decoration-color: rgba(59, 130, 246, 0.5);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+a:hover { color: var(--brand-hover); text-decoration-color: rgba(59, 130, 246, 0.9); }
+a:focus { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+::selection { background: rgba(59, 130, 246, 0.3); color: var(--text); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(203, 213, 225, 0.25); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand); }
+
+/* Layout */
+.layout {
   position: relative;
   z-index: 1;
-}
-
-/* OrderedList Minimal layout structure (ported from minimal-master/stylesheets/styles.css) */
-/* These structural rules ensure object positions match the original theme while preserving our Zed styling. */
-
-/* Layout variables (consolidated with global :root) */
-:root {
-  --sidebar-width: 270px;      /* header/footer column */
-  --content-width: 500px;      /* main section column */
-}
-
-/* Mobile and tablet use normal page scrolling. */
-body {
-  margin: 0;
-  padding: 50px;
-}
-
-/* The main panel spans both sidebar rows. */
-.wrapper {
-  max-width: var(--wrapper-max);
+  display: block;
+  max-width: 760px;
   margin: 0 auto;
-  min-height: calc(100vh - 100px);
-  display: grid;
-  grid-template-columns: var(--sidebar-width) minmax(0, var(--content-width));
-  grid-template-rows: auto 1fr;
-  grid-template-areas: "profile content" "footer content";
-  gap: 2rem 50px;
-  align-items: start;
+  padding: 0 20px;
 }
 
-header {
-  grid-area: profile;
-}
+/* Sidebar */
+.sidebar { margin-bottom: 1.5rem; text-align: center; }
+.sidebar h1 a { color: var(--text); text-decoration: none; }
+.sidebar h1 a:hover { color: var(--brand-hover); }
+.sidebar p { max-width: 440px; margin-inline: auto; color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
 
-/* Two-line social links keep the same treatment in four columns. */
-header ul.downloads {
-  list-style: none;
-  height: 48px;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.02);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  width: 100%;
+.avatar {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 1rem;
+  border: 2px solid rgba(203, 213, 225, 0.25);
+  border-radius: 50%;
+  transition: border-color 0.2s ease;
+}
+.avatar:hover { border-color: var(--brand); }
+
+.social-links {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 20px 0;
-  overflow: hidden;
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-header ul.downloads li {
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 480px;
   height: 48px;
-  margin: 0;
+  margin: 20px auto 1.5rem;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-header ul.downloads li:last-child {
-  border-right: none;
-}
+.social-links li { height: 48px; margin: 0; border-right: 1px solid var(--border); }
+.social-links li:last-child { border-right: 0; }
 
-header ul.downloads li:first-child a {
-  border-radius: 7px 0 0 7px;
-}
-
-header ul.downloads li:last-child a {
-  border-radius: 0 7px 7px 0;
-}
-
-header ul.downloads a {
-  line-height: 1;
-  font-size: 10px;
-  white-space: nowrap;
-  color: var(--muted-text-color);
+.social-links a {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 8px 3px;
   height: 48px;
-  text-decoration: none !important;
-  position: relative;
+  padding: 8px 3px;
+  font-size: 10px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
   transition: all 0.2s ease;
-  background: transparent;
 }
+.social-links a:hover { background: rgba(59, 130, 246, 0.08); }
+.social-links a:active { background: rgba(59, 130, 246, 0.12); transform: scale(0.98); }
 
-/* Subtle gradient overlay on hover */
-header ul.downloads a::before {
-  content: '';
+/* Hover tint and accent bar */
+.social-links a::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg,
-    rgba(59, 130, 246, 0.1) 0%,
-    rgba(59, 130, 246, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
   opacity: 0;
   transition: opacity 0.2s ease;
 }
-
-header ul.downloads a:hover {
-  color: var(--text-color);
-  background: rgba(59, 130, 246, 0.08);
-}
-
-header ul.downloads a:hover::before {
-  opacity: 1;
-}
-
-header ul.downloads a:active {
-  background: rgba(59, 130, 246, 0.12);
-  transform: scale(0.98);
-}
-
-header ul.downloads a strong {
-  font-size: 12px;
-  display: block;
-  color: var(--text-color);
-  font-weight: 600;
-  line-height: 1.2;
-  margin-top: 3px;
-  padding: 0;
-  position: relative;
-  z-index: 1;
-}
-
-/* Add subtle accent indicator */
-header ul.downloads a::after {
-  content: '';
+.social-links a::after {
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%) scaleX(0);
   width: 60%;
   height: 2px;
-  background: var(--brand-color);
-  transition: transform 0.2s ease;
+  background: var(--brand);
   border-radius: 2px;
+  transform: translateX(-50%) scaleX(0);
+  transition: transform 0.2s ease;
+}
+.social-links a:hover::before { opacity: 1; }
+.social-links a:hover::after { transform: translateX(-50%) scaleX(1); }
+
+.social-links strong {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-top: 3px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
-header ul.downloads a:hover::after {
-  transform: translateX(-50%) scaleX(1);
-}
-
-section {
-  grid-area: content;
+/* Profile card */
+.profile-card {
+  position: relative;
   min-width: 0;
+  margin: 0 0 1.5rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 -1px 0 rgba(255, 255, 255, 0.02) inset;
 }
-
-footer {
-  grid-area: footer;
-  align-self: end;
-  margin-top: 0;
+/* Inner highlight border */
+.profile-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  pointer-events: none;
 }
+.profile-card > :first-child { margin-top: 0; }
+.profile-card > :last-child { margin-bottom: 0; }
+.profile-card ul { padding-left: 0; list-style: none; }
+.profile-card p a { text-decoration: none; }
 
-@media screen and (min-width: 1101px) {
-  /* Page scrolling works everywhere while the sidebar stays in view. */
-  header, footer {
-    position: fixed;
-    left: calc(50% - var(--wrapper-max) / 2 + 20px);
-    width: var(--sidebar-width);
+/* Technology icons */
+.tech-icons { line-height: 1.7; }
+.tech-icons a { text-decoration: none; }
+
+/* GitHub repository and stats cards */
+.github-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.github-cards a {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.github-cards a:hover { border-color: rgba(59, 130, 246, 0.45); }
+.github-cards img { display: block; width: 100%; border-radius: 0; }
+
+/* Footer */
+.site-footer {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0.75rem;
+  color: var(--footer-text);
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 -1px 0 rgba(255, 255, 255, 0.02) inset;
+}
+.site-footer p { margin: 0; font-size: 0.8rem; }
+
+/* Desktop: fixed sidebar and footer, page scrolls with the card */
+@media (min-width: 1101px) {
+  body { padding: 50px; }
+
+  .layout {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) minmax(0, var(--content-width));
+    gap: 0 50px;
+    align-items: start;
+    min-height: calc(100vh - 100px);
+    max-width: var(--layout-max);
   }
 
-  header { top: 50px; }
-  footer { bottom: 50px; padding: .75rem !important; }
-  footer p { font-size: .8rem; }
+  .sidebar,
+  .site-footer {
+    position: fixed;
+    left: calc(50% - var(--layout-max) / 2 + 20px);
+    width: var(--sidebar-width);
+    max-width: none;
+    margin: 0;
+  }
+  .sidebar { top: 50px; text-align: left; }
+  .site-footer { bottom: 50px; }
+  .sidebar p { max-width: none; margin-inline: 0; }
 
-  header ul.downloads {
-    height: auto;
+  .avatar { display: inline; width: auto; height: auto; max-width: 100%; margin: 0; }
+
+  .profile-card { grid-column: 2; margin: 0; padding: 2rem; }
+
+  .social-links {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
-    padding: 0;
-    background: transparent;
+    max-width: none;
+    height: auto;
+    margin: 20px 0;
+    overflow: visible;
+    background: none;
+    border: 0;
+    border-radius: 0;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
-    border: 0;
-    overflow: visible;
     box-shadow: none;
   }
-
-  header ul.downloads li,
-  header ul.downloads li:last-child {
+  .social-links li,
+  .social-links li:last-child {
     height: auto;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
+    overflow: hidden;
     background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 8px;
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
-    overflow: hidden;
   }
-
-  header ul.downloads a {
-    height: 56px;
-    font-size: 11px;
-    border-radius: 7px;
-  }
-
-  header ul.downloads a strong {
-    font-size: 13px;
-  }
-
-  header ul.downloads a:focus-visible {
-    outline-offset: -3px;
-  }
+  .social-links a { height: 56px; font-size: 11px; border-radius: 7px; }
+  .social-links a:focus { outline-offset: -3px; }
+  .social-links strong { font-size: 13px; }
+  .github-cards { grid-template-columns: 1fr; }
 }
 
-@media screen and (min-width: 1101px) and (max-height: 850px) {
+/* Short desktop: shrink the avatar so the sidebar fits */
+@media (min-width: 1101px) and (max-height: 850px) {
   body { padding-block: 24px; }
-  header { top: 24px; }
-  footer { bottom: 24px; }
-  .wrapper { row-gap: 16px; }
-  header h1 { margin-top: 0; margin-bottom: 12px; }
-  header img { width: clamp(80px, calc(100dvh - 480px), 270px); }
-  header p { margin-bottom: 12px; }
-  header ul.downloads { margin: 12px 0 0; }
+  .sidebar { top: 24px; }
+  .site-footer { bottom: 24px; }
+  .sidebar h1 { margin-top: 0; margin-bottom: 12px; }
+  .avatar { width: clamp(80px, calc(100dvh - 480px), 270px); }
+  .sidebar p { margin-bottom: 12px; }
+  .social-links { margin: 12px 0 0; }
 }
 
-@media screen and (max-width: 1100px) {
-  body {
-    padding: 20px;
-  }
-
-  div.wrapper {
-    max-width: 760px;
-    min-height: 0;
-    display: block;
-    margin: 0 auto;
-  }
-
-  header {
-    padding: 0;
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-
-  header p {
-    max-width: 440px;
-    margin-inline: auto;
-  }
-
-  header img {
-    max-width: 160px !important;
-    width: 160px !important;
-    height: 160px !important;
-    display: block !important;
-    margin: 0 auto 1rem auto !important;
-  }
-
-  header ul.downloads {
-    max-width: 480px;
-    margin: 20px auto 1.5rem;
-  }
-
-  section {
-    padding: 1.5rem !important;
-    margin: 0 0 1.5rem 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  footer {
-    max-width: 300px;
-    margin: 1.5rem auto 0;
-  }
-
-  .github-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .github-cards img {
-    border-radius: 0;
-  }
+/* Small tablets and phones */
+@media (max-width: 600px) {
+  body { padding: 16px; overflow-wrap: anywhere; }
+  .layout { padding: 0; }
+  .sidebar { margin-bottom: 1rem; }
+  .avatar { width: 120px; height: 120px; }
+  .social-links a { padding: 8px 2px; }
+  .social-links strong { font-size: 11px; }
+  .profile-card { padding: 1.2rem 1rem; }
+  .profile-card h3 { font-size: 1.15rem; }
+  .profile-card p, .profile-card li, .tech-icons { font-size: 0.9rem; }
+  .github-cards { grid-template-columns: 1fr; }
 }
 
-@media screen and (max-width: 600px) {
-  .github-cards {
-    grid-template-columns: 1fr;
-  }
-
-  /* Let scaled SVG cards keep their own rounded border without clipping it. */
-  .github-cards img { border-radius: 0; }
-
-  body {
-    padding: 16px;
-    overflow-wrap: anywhere;
-  }
-
-  .wrapper {
-    padding: 0;
-  }
-
-  header {
-    margin-bottom: 1rem;
-  }
-
-  header img {
-    max-width: 120px !important;
-    width: 120px !important;
-    height: 120px !important;
-  }
-
-  header ul.downloads a {
-    font-size: 10px !important;
-    padding: 8px 2px;
-  }
-
-  header ul.downloads a strong {
-    font-size: 11px;
-  }
-
-  section {
-    padding: 1.2rem 1rem !important;
-  }
-
-  section h1 { font-size: 1.5rem !important; }
-  section h2 { font-size: 1.3rem !important; }
-  section h3 { font-size: 1.15rem !important; }
-  section h4 { font-size: 1.05rem !important; }
-  section h5 { font-size: 0.95rem !important; }
-  section h6 { font-size: 0.9rem !important; }
-  section p  { font-size: 0.9rem !important; }
-  section li { font-size: 0.9rem !important; }
-
-  pre, code {
-    word-wrap: normal;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  body {
-    padding: 12px;
-  }
-
-  header img {
-    max-width: 100px !important;
-    width: 100px !important;
-    height: 100px !important;
-  }
-
-  section {
-    padding: 1rem !important;
-  }
-
-  section h1 { font-size: 1.3rem !important; }
-  section h2 { font-size: 1.1rem !important; }
-  section h3 { font-size: 1rem !important; }
-  section h4 { font-size: 0.95rem !important; }
-  section h5 { font-size: 0.9rem !important; }
-  section h6 { font-size: 0.9rem !important; }
-  section p  { font-size: 0.9rem !important; }
-  section li { font-size: 0.9rem !important; }
+@media (max-width: 400px) {
+  body { padding: 12px; }
+  .avatar { width: 100px; height: 100px; }
+  .profile-card { padding: 1rem; }
+  .profile-card h3 { font-size: 1rem; }
 }

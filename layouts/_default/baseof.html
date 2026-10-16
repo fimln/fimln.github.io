@@ -29,23 +29,23 @@
     <link rel="stylesheet" href="{{ "assets/css/style.css" | relURL }}?v={{ readFile "static/assets/css/style.css" | sha256 }}">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
+    <div class="layout">
+      <header class="sidebar">
         <h1><a href="{{ "/" | relURL }}">{{ site.Title }}</a></h1>
-        <img src="{{ "assets/img/logo.png" | relURL }}" alt="Logo">
+        <img class="avatar" src="{{ "assets/img/logo.png" | relURL }}" alt="Logo">
         <p>{{ site.Params.description }}</p>
-        <ul class="downloads">
+        <ul class="social-links">
           <li><a href="https://blog.alfi.ai.id/">Blog Page <strong>fimln Blog</strong></a></li>
           <li><a href="https://github.com/fimln">View On <strong>GitHub</strong></a></li>
           <li><a href="https://www.linkedin.com/in/fimln/">Lets Connect! <strong>LinkedIn</strong></a></li>
           <li><a href="https://www.instagram.com/alfimlnbr/">Follow me On <strong>Instagram</strong></a></li>
         </ul>
       </header>
-      <section>
+      <main class="profile-card">
         {{ block "main" . }}{{ end }}
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages, Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </main>
+      <footer class="site-footer">
+        <p><small>Made with ❤️ and ☕, hosted on GitHub Pages</small></p>
       </footer>
     </div>
     <script>
