@@ -1,5 +1,39 @@
 ---
 title: "Alfi Maulana Akbar"
+
+tech_icons:
+  - { icon: google-cloud, url: "https://cloud.google.com/", alt: "google-cloud" }
+  - { icon: azure, url: "https://azure.microsoft.com/", alt: "Microsoft Azure" }
+  - { icon: aws, url: "https://aws.amazon.com/", alt: "AWS" }
+  - { icon: cloudflare, url: "https://www.cloudflare.com/", alt: "cloudflare" }
+  - { icon: ubuntu, url: "https://ubuntu.com/", alt: "Ubuntu" }
+  - { icon: hermes-agent, url: "https://github.com/NousResearch/hermes-agent", alt: "Hermes Agent" }
+  - { icon: python, url: "https://www.python.org", alt: "python" }
+  - { icon: jupyter, url: "https://jupyter.org/", alt: "Jupyter" }
+  - { icon: tensorflow, url: "https://www.tensorflow.org", alt: "tensorflow" }
+  - { icon: roboflow-dark, url: "https://roboflow.com/", alt: "roboflow" }
+  - { icon: html5, url: "https://www.w3.org/html/", alt: "html5" }
+  - { icon: css3, url: "https://www.w3schools.com/css/", alt: "css3" }
+  - { icon: javascript, url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", alt: "JavaScript" }
+  - { icon: rust, url: "https://www.rust-lang.org/", alt: "rust" }
+
+pinned_repos:
+  - { name: RentHub, height: 140 }
+  - { name: RouteFinder, height: 140 }
+  - { name: SelfInstruct, height: 150 }
+  - { name: GlobalHE, height: 140 }
+
+github_stats:
+  - href: "https://github.com/fimln"
+    src: "https://github-stats-extended.vercel.app/api?username=fimln&show_icons=true&theme=react&hide_border=true&include_all_commits=true&disable_animations=true"
+    alt: "Alfi Maulana Akbar's GitHub statistics"
+    width: 467
+    height: 195
+  - href: "https://github.com/fimln?tab=repositories"
+    src: "https://github-stats-extended.vercel.app/api/top-langs/?username=fimln&layout=compact&langs_count=8&theme=react&hide_border=true&disable_animations=true&card_width=467"
+    alt: "Most used programming languages on GitHub"
+    width: 467
+    height: 190
 ---
 
 ### Hi there, nice to meet you 👋
@@ -9,26 +43,3 @@ My name is **Alfi Maulana Akbar**.
 - 🔭 Currently pursuing a Master’s degree in Computer Science at Universitas Gadjah Mada, Yogyakarta.
 - ☁️ My areas of interest include computer vision, local LLMs, cloud-based machine learning deployment, and GNU/Linux system administration.
 - 📫 Connect with me: [LinkedIn](https://www.linkedin.com/in/fimln/) and [Instagram](https://www.instagram.com/alfimlnbr/).
-
-
-### Languages and Tools
-
-<div class="tech-icons">
-<a href="https://cloud.google.com/" target="_blank" rel="noreferrer"> <img src="/assets/icons/google-cloud.svg" alt="google-cloud" width="40" height="40"/> </a> <a href="https://azure.microsoft.com/" target="_blank" rel="noreferrer"> <img src="/assets/icons/azure.svg" alt="Microsoft Azure" width="40" height="40"/> </a> <a href="https://aws.amazon.com/" target="_blank" rel="noreferrer"> <img src="/assets/icons/aws.svg" alt="AWS" width="40" height="40"/> </a> <a href="https://www.cloudflare.com/" target="_blank" rel="noreferrer"> <img src="/assets/icons/cloudflare.svg" alt="cloudflare" width="40" height="40"/> </a> <a href="https://ubuntu.com/" target="_blank" rel="noreferrer"> <img src="/assets/icons/ubuntu.svg" alt="Ubuntu" width="40" height="40"/> </a> <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noreferrer"> <img src="/assets/icons/hermes-agent.svg" alt="Hermes Agent" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="/assets/icons/python.svg" alt="python" width="40" height="40"/> </a> <a href="https://jupyter.org/" target="_blank" rel="noreferrer"> <img src="/assets/icons/jupyter.svg" alt="Jupyter" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="/assets/icons/tensorflow.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://roboflow.com/" target="_blank" rel="noreferrer"> <img src="/assets/icons/roboflow-dark.svg" alt="roboflow" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="/assets/icons/html5.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="/assets/icons/css3.svg" alt="css3" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="/assets/icons/javascript.svg" alt="JavaScript" width="40" height="40"/> </a> <a href="https://www.rust-lang.org/" target="_blank" rel="noreferrer"> <img src="/assets/icons/rust.svg" alt="rust" width="40" height="40"/> </a> </div>
-
-
-### Top 4 GitHub Repos
-
-<div class="github-cards">
-  <a href="https://github.com/fimln/RentHub"><img src="https://github-stats-extended.vercel.app/api/pin/?username=fimln&amp;repo=RentHub&amp;theme=react&amp;hide_border=true&amp;disable_animations=true" alt="RentHub — pinned GitHub repository" loading="lazy" width="400" height="140"></a>
-  <a href="https://github.com/fimln/RouteFinder"><img src="https://github-stats-extended.vercel.app/api/pin/?username=fimln&amp;repo=RouteFinder&amp;theme=react&amp;hide_border=true&amp;disable_animations=true" alt="RouteFinder — pinned GitHub repository" loading="lazy" width="400" height="140"></a>
-  <a href="https://github.com/fimln/SelfInstruct"><img src="https://github-stats-extended.vercel.app/api/pin/?username=fimln&amp;repo=SelfInstruct&amp;theme=react&amp;hide_border=true&amp;disable_animations=true" alt="SelfInstruct — pinned GitHub repository" loading="lazy" width="400" height="150"></a>
-  <a href="https://github.com/fimln/GlobalHE"><img src="https://github-stats-extended.vercel.app/api/pin/?username=fimln&amp;repo=GlobalHE&amp;theme=react&amp;hide_border=true&amp;disable_animations=true" alt="GlobalHE — pinned GitHub repository" loading="lazy" width="400" height="140"></a>
-</div>
-
-### GitHub Stats
-
-<div class="github-cards">
-  <a href="https://github.com/fimln"><img src="https://github-stats-extended.vercel.app/api?username=fimln&amp;show_icons=true&amp;theme=react&amp;hide_border=true&amp;include_all_commits=true&amp;disable_animations=true" alt="Alfi Maulana Akbar's GitHub statistics" loading="lazy" width="467" height="195"></a>
-  <a href="https://github.com/fimln?tab=repositories"><img src="https://github-stats-extended.vercel.app/api/top-langs/?username=fimln&amp;layout=compact&amp;langs_count=8&amp;theme=react&amp;hide_border=true&amp;disable_animations=true&amp;card_width=467" alt="Most used programming languages on GitHub" loading="lazy" width="467" height="190"></a>
-</div>

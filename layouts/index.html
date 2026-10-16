@@ -1,1 +1,24 @@
-{{ define "main" }}{{ .Content }}{{ end }}
+{{ define "main" }}
+{{ .Content }}
+
+<h3>Languages and Tools</h3>
+<div class="tech-icons">
+{{- range .Params.tech_icons }}
+<a href="{{ .url }}" target="_blank" rel="noreferrer"> <img src="/assets/icons/{{ .icon }}.svg" alt="{{ .alt }}" width="40" height="40"/> </a>
+{{- end }}
+</div>
+
+<h3>Top 4 GitHub Repos</h3>
+<div class="github-cards">
+{{- range .Params.pinned_repos }}
+  <a href="https://github.com/fimln/{{ .name }}"><img src="https://github-stats-extended.vercel.app/api/pin/?username=fimln&amp;repo={{ .name }}&amp;theme=react&amp;hide_border=true&amp;disable_animations=true" alt="{{ .name }} — pinned GitHub repository" loading="lazy" width="400" height="{{ .height }}"></a>
+{{- end }}
+</div>
+
+<h3>GitHub Stats</h3>
+<div class="github-cards">
+{{- range .Params.github_stats }}
+  <a href="{{ .href }}"><img src="{{ .src }}" alt="{{ .alt }}" loading="lazy" width="{{ .width }}" height="{{ .height }}"></a>
+{{- end }}
+</div>
+{{ end }}

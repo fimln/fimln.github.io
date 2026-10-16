@@ -6,6 +6,3 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
 [params]
 description = "Fig.1 - An ordinary person with AI-generated cartoon-esque selfie."
-
-[markup.goldmark.renderer]
-unsafe = true
